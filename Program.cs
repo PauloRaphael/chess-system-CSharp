@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-using Tabuleiro;
+using tabuleiro;
 
 namespace XadrezConsole // Note: actual namespace depends on the project name.
 {
@@ -7,9 +7,7 @@ namespace XadrezConsole // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Posição: " + new Posicao(3, 4));
-
-            Console.ReadLine();
+            Tabuleiro tab = new(8, 8);
         }
     }
 }
