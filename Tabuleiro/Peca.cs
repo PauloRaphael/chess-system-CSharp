@@ -5,14 +5,15 @@
 
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
-        public int qteMovimentos {  get; set; }
+        public int QteMovimentos {  get; set; }
         public Tabuleiro Tab {  get; set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tab)
+        public Peca(Tabuleiro tab, Cor cor)
         {
-            Posicao = posicao;
-            Cor = cor;
             Tab = tab;
+            Cor = cor;
+            Posicao = null;
+            QteMovimentos = 0;
         }
     }
 }
