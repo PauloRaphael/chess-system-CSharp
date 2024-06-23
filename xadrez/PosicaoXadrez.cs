@@ -1,4 +1,5 @@
-﻿using tabuleiro;
+﻿using System.Runtime.InteropServices;
+using tabuleiro;
 
 namespace xadrez
 {
