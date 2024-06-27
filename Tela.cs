@@ -1,4 +1,5 @@
-﻿    using tabuleiro;
+﻿using System.Security;
+using tabuleiro;
 using xadrez;
 using XadrezConsole.xadrez;
 
@@ -13,10 +14,18 @@ namespace XadrezConsole
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
             Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            if(partida.xeque)
+
+            if (!partida.Terminada)
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            } else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
         }
         

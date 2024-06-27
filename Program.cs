@@ -32,10 +32,10 @@ namespace XadrezConsole
                         Console.WriteLine();
                         Console.Write("Destino: ");
                         Posicao destino = Tela.LerPosicaoXadrez().toPosicao();
-                        partida.ValidarPosicaoDeDestino(origem, destino); 
+                        partida.ValidarPosicaoDeDestino(origem, destino);
 
                         partida.RealizaJogada(origem, destino);
-                    } 
+                    }
                     catch (TabuleiroException ex)
                     {
                         Console.WriteLine(ex.Message);
@@ -43,9 +43,10 @@ namespace XadrezConsole
                     }
                 }
 
-                Console.ReadLine();
+                Console.Clear();
+                Tela.ImprimirPartida(partida);
             }
-            catch (Exception ex)
+            catch (TabuleiroException ex)
             {
                 Console.WriteLine(ex.Message);
             }
