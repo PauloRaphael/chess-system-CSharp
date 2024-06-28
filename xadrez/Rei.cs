@@ -88,7 +88,7 @@ namespace xadrez
 
             // # JoagadaEspecial roque
 
-            if(QteMovimentos == 0 && !Partida.xeque)
+            if(QteMovimentos == 0 && !Partida.Xeque)
             {
                 // # JodagadaEspecial roque pequeno
                 Posicao posT1 = new Posicao(Posicao.Linha, Posicao.Coluna + 3);
