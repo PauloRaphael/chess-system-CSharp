@@ -7,6 +7,7 @@ namespace XadrezConsole
 {
     internal class Tela
     {
+        public static char[] colunasPossiveis = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
 
         public static void ImprimirPartida(PartidaDeXadrez partida)
         {
@@ -97,9 +98,26 @@ namespace XadrezConsole
         public static PosicaoXadrez LerPosicaoXadrez()
         {
             string s = Console.ReadLine();
+
+            if (s.Length != 2 || !IsInputValid(s[0], s[1]))
+            {
+                throw new TabuleiroException("Linha ou coluna com formatação errada!");
+            }
+
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
+            
+            if(linha > 8 || linha < 1)
+            {
+                throw new TabuleiroException("Linha ou coluna com formatação errada!");
+            }
+            
             return new PosicaoXadrez(coluna, linha);
+
+        }
+        private static bool IsInputValid(char coluna, char linhaChar)
+        {
+            return colunasPossiveis.Contains(coluna) && int.TryParse(linhaChar + "", out _);
         }
 
         public static void ImprimitPeca(Peca peca)

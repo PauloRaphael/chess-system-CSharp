@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using tabuleiro;
+﻿using tabuleiro;
 using xadrez;
 
 namespace XadrezConsole.xadrez
